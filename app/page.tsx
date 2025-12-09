@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import { Snowfall } from 'react-snowfall';
 import { FaEnvelope, FaMobileAlt } from 'react-icons/fa';
 import { motion, easeOut } from 'framer-motion';
@@ -46,22 +45,20 @@ export default function UnderConstruction() {
       <motion.div className="p-6" variants={itemVariants}>
         <div className="relative">
           <div className="absolute top-6 right-6 translate-x-1/2 -translate-y-1/2 transform rotate-12 z-0 drop-shadow-2xl">
-            <Image
+            <img
               src="/santa-hat.png"
               alt="Santa Hat"
-              width={200}
-              height={200}
-              priority
+              width="200"
+              height="200"
             />
           </div>
           <div className="relative bg-white p-6 rounded-full border-4 border-gray-700 shadow-2xl z-10">
-            <Image
+            <img
               src="/logo.svg"
               alt="Marcgraphix Studio Logo"
-              width={220}
-              height={220}
+              width="220"
+              height="220"
               className="rounded-full"
-              priority
             />
           </div>
         </div>
