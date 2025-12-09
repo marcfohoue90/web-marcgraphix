@@ -30,7 +30,7 @@ export default function UnderConstruction() {
 
   return (
     <motion.div
-      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-center text-white"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-center text-white bg-fixed"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -50,32 +50,34 @@ export default function UnderConstruction() {
               alt="Santa Hat"
               width="200"
               height="200"
+              loading="lazy"
             />
           </div>
-          <div className="relative bg-white p-6 rounded-full border-4 border-gray-700 shadow-2xl z-10">
+          <div className="relative bg-white p-4 rounded-full border-4 border-gray-700 shadow-2xl z-10">
             <img
               src="/logo.svg"
               alt="Marcgraphix Studio Logo"
-              width="220"
-              height="220"
+              width="180"
+              height="180"
               className="rounded-full"
+              loading="lazy"
             />
           </div>
         </div>
       </motion.div>
 
       <motion.h1
-        className="text-5xl md:text-7xl font-extrabold mt-8 text-white drop-shadow-[0_5px_15px_rgba(255,255,255,0.8)] font-baloo relative"
+        className="text-4xl md:text-7xl font-extrabold mt-8 text-white drop-shadow-[0_5px_15px_rgba(255,255,255,0.8)] font-baloo relative text-center"
         variants={itemVariants}
       >
-        {"Marcgraphix Studio".split("").map((char, index) => (
+        {"Marcgraphix Studio".split(" ").map((word, index) => (
           <motion.span
             key={index}
-            className="inline-block"
+            className={index === 1 ? "block md:inline-block ml-0 md:ml-2" : "inline-block"} // Studio passe en dessous sur petit écran avec espace ajusté
             animate={{
               textShadow: [
-                "0 0 5px rgba(255, 215, 0, 0.5)", // Lumière douce dorée
-                "0 0 10px rgba(255, 215, 0, 0.3)", // Lumière encore plus douce
+                "0 0 5px rgba(255, 215, 0, 0.5)",
+                "0 0 10px rgba(255, 215, 0, 0.3)",
                 "0 0 5px rgba(255, 215, 0, 0.5)",
               ],
             }}
@@ -86,7 +88,7 @@ export default function UnderConstruction() {
               delay: index * 0.1, // Décalage pour chaque lettre
             }}
           >
-            {char}
+            {word}
           </motion.span>
         ))}
       </motion.h1>
